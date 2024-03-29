@@ -7,8 +7,13 @@ public class Main {
         myMovie.ageMovie = 2010;
         myMovie.movieDuration = 180;
 
-        System.out.println(myMovie);
-        System.out.println(myMovie.nameMovie);
+        myMovie.showTechnicalSheet();
+        myMovie.toAssess(8);
+        myMovie.toAssess(5);
+        myMovie.toAssess(3);
 
+        System.out.println(myMovie.totalAssessment);
+        System.out.println(myMovie.assessment);
+        System.out.println(myMovie.getMedia());
     }
 }
