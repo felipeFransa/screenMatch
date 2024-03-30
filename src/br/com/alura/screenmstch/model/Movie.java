@@ -1,15 +1,43 @@
 package br.com.alura.screenmstch.model;
 
 public class Movie {
-    public String nameMovie;
-    public int ageMovie;
-    boolean packageIncluded;
+    private String nameMovie;
+    private int ageMovie;
+    private boolean packageIncluded;
     private int assessment;
     private int totalAssessment;
-    public int movieDuration;
+    private int movieDuration;
 
     public int getTotalAssessment(){
         return totalAssessment;
+    }
+
+    public String getNameMovie() {
+        return nameMovie;
+    }
+
+    public int getAgeMovie() {
+        return ageMovie;
+    }
+
+    public int getMovieDuration() {
+        return movieDuration;
+    }
+
+    public void setNameMovie(String nameMovie) {
+        this.nameMovie = nameMovie;
+    }
+
+    public void setAgeMovie(int ageMovie) {
+        this.ageMovie = ageMovie;
+    }
+
+    public void setMovieDuration(int movieDuration) {
+        this.movieDuration = movieDuration;
+    }
+
+    public void setPackageIncluded(boolean packageIncluded) {
+        this.packageIncluded = packageIncluded;
     }
 
     public void showTechnicalSheet (){

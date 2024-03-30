@@ -5,15 +5,19 @@ public class Main {
 
         Movie myMovie = new Movie();
 
-        myMovie.nameMovie = "Cars";
-        myMovie.ageMovie = 2010;
-        myMovie.movieDuration = 180;
+        myMovie.setNameMovie("Harry Potter");
+        myMovie.setAgeMovie(2014);
+        myMovie.setMovieDuration(180);
+        myMovie.setPackageIncluded(true);
 
         myMovie.showTechnicalSheet();
         myMovie.toAssess(8);
         myMovie.toAssess(5);
         myMovie.toAssess(3);
 
+        System.out.println(myMovie.getAgeMovie());
+        System.out.println(myMovie.getNameMovie());
+        System.out.println(myMovie.getMovieDuration() + "\n");
         System.out.println(myMovie.getTotalAssessment());
         System.out.println(myMovie.getMedia());
     }
