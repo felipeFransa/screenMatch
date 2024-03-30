@@ -1,13 +1,13 @@
-import br.com.alura.screenmstch.model.Movie;
+import br.com.alura.screenmatch.model.Title;
 
 public class Main {
     public static void main(String[] args) {
 
-        Movie myMovie = new Movie();
+        Title myMovie = new Title();
 
-        myMovie.setNameMovie("Harry Potter");
-        myMovie.setAgeMovie(2014);
-        myMovie.setMovieDuration(180);
+        myMovie.setNameTitle("Harry Potter");
+        myMovie.setAgeTitle(2014);
+        myMovie.setTitleDuration(180);
         myMovie.setPackageIncluded(true);
 
         myMovie.showTechnicalSheet();
@@ -15,9 +15,9 @@ public class Main {
         myMovie.toAssess(5);
         myMovie.toAssess(3);
 
-        System.out.println(myMovie.getAgeMovie());
-        System.out.println(myMovie.getNameMovie());
-        System.out.println(myMovie.getMovieDuration() + "\n");
+        System.out.println(myMovie.getAgeTitle());
+        System.out.println(myMovie.getNameTitle());
+        System.out.println(myMovie.getTitleDuration() + "\n");
         System.out.println(myMovie.getTotalAssessment());
         System.out.println(myMovie.getMedia());
     }
