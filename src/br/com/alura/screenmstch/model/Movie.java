@@ -1,26 +1,28 @@
+package br.com.alura.screenmstch.model;
+
 public class Movie {
-    String nameMovie;
-    int ageMovie;
+    public String nameMovie;
+    public int ageMovie;
     boolean packageIncluded;
     private int assessment;
     private int totalAssessment;
-    int movieDuration;
+    public int movieDuration;
 
-    int getTotalAssessment(){
+    public int getTotalAssessment(){
         return totalAssessment;
     }
 
-    void showTechnicalSheet (){
+    public void showTechnicalSheet (){
         System.out.println(nameMovie);
         System.out.println(ageMovie);
     }
 
-    void toAssess(double noteOne){
+    public void toAssess(double noteOne){
         assessment += noteOne;
         totalAssessment++;
     }
 
-    double getMedia(){
+    public double getMedia(){
         return assessment / totalAssessment;
     }
 }
