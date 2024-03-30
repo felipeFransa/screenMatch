@@ -2,9 +2,13 @@ public class Movie {
     String nameMovie;
     int ageMovie;
     boolean packageIncluded;
-    int assessment;
-    int totalAssessment;
+    private int assessment;
+    private int totalAssessment;
     int movieDuration;
+
+    int getTotalAssessment(){
+        return totalAssessment;
+    }
 
     void showTechnicalSheet (){
         System.out.println(nameMovie);

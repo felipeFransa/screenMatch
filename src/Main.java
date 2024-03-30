@@ -12,8 +12,7 @@ public class Main {
         myMovie.toAssess(5);
         myMovie.toAssess(3);
 
-        System.out.println(myMovie.totalAssessment);
-        System.out.println(myMovie.assessment);
+        System.out.println(myMovie.getTotalAssessment());
         System.out.println(myMovie.getMedia());
     }
 }
