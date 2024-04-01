@@ -17,11 +17,11 @@ public class Main {
         myMovie.toAssess(5);
         myMovie.toAssess(3);
 
-        System.out.println(myMovie.getNameTitle());
-        System.out.println(myMovie.getAgeTitle());
-        System.out.println(myMovie.getTitleDuration() + "\n");
-        System.out.println(myMovie.getTotalAssessment());
-        System.out.println(myMovie.getMedia());
+        System.out.println("\nNome do titulo: " +myMovie.getNameTitle());
+        System.out.println("Ano de lancamento: " +myMovie.getAgeTitle());
+        System.out.println("Tempo de duracao: " +myMovie.getTitleDuration() + "\n");
+//        System.out.println(myMovie.getTotalAssessment());
+//        System.out.println(myMovie.getMedia());
 
         Serie supernatural  = new Serie();
 
@@ -31,10 +31,10 @@ public class Main {
         supernatural.setEpisodes(23);
         supernatural.setMinutesEpisode(50);
 
-
-        System.out.println(supernatural.getNameTitle());
-        System.out.println(supernatural.getAgeTitle());
-        System.out.println(supernatural.getTitleDuration());
+        System.out.println("Nome do titulo: " +supernatural.getNameTitle());
+        System.out.println("Ano do lancamento: " +supernatural.getAgeTitle());
+        System.out.println("Total de temporadas: " +supernatural.getTemples());
+        System.out.println("Tempo de duracao: " +supernatural.getTitleDuration());
 
         Movie newMovie = new Movie();
 
@@ -46,6 +46,7 @@ public class Main {
         timecalculator  calculator = new timecalculator();
         calculator.incluide(myMovie);
         calculator.incluide(newMovie);
-        System.out.println("Os filmes tem: " +calculator.getTimeTotal() + " Minutos");
+        calculator.incluide(supernatural);
+        System.out.println("\nOs filmes tem: " +calculator.getTimeTotal() + " Minutos");
     }
 }
