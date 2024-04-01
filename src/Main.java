@@ -36,8 +36,16 @@ public class Main {
         System.out.println(supernatural.getAgeTitle());
         System.out.println(supernatural.getTitleDuration());
 
+        Movie newMovie = new Movie();
+
+        newMovie.setNameTitle("Senhor dos Aneis");
+        newMovie.setAgeTitle(2002);
+        newMovie.setTitleDuration(160);
+        newMovie.setPackageIncluded(false);
+
         timecalculator  calculator = new timecalculator();
         calculator.incluide(myMovie);
-        System.out.println(calculator.getTimeTotal());
+        calculator.incluide(newMovie);
+        System.out.println("Os filmes tem: " +calculator.getTimeTotal() + " Minutos");
     }
 }
