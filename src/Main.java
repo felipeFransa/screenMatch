@@ -1,3 +1,5 @@
+import br.com.alura.screenmatch.businesslogic.timecalculator;
+import br.com.alura.screenmatch.model.Movie;
 import br.com.alura.screenmatch.model.Serie;
 import br.com.alura.screenmatch.model.Title;
 
@@ -33,5 +35,9 @@ public class Main {
         System.out.println(supernatural.getNameTitle());
         System.out.println(supernatural.getAgeTitle());
         System.out.println(supernatural.getTitleDuration());
+
+        timecalculator  calculator = new timecalculator();
+        calculator.incluide(myMovie);
+        System.out.println(calculator.getTimeTotal());
     }
 }
