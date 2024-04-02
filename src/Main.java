@@ -1,4 +1,6 @@
-import br.com.alura.screenmatch.businesslogic.timecalculator;
+import br.com.alura.screenmatch.businesslogic.RecommendationsFilter;
+import br.com.alura.screenmatch.businesslogic.Timecalculator;
+import br.com.alura.screenmatch.model.Episode;
 import br.com.alura.screenmatch.model.Movie;
 import br.com.alura.screenmatch.model.Serie;
 import br.com.alura.screenmatch.model.Title;
@@ -6,7 +8,7 @@ import br.com.alura.screenmatch.model.Title;
 public class Main {
     public static void main(String[] args) {
 
-        Title myMovie = new Title();
+        Movie myMovie = new Movie();
 
         myMovie.setNameTitle("Harry Potter");
         myMovie.setAgeTitle(2014);
@@ -43,10 +45,20 @@ public class Main {
         newMovie.setTitleDuration(160);
         newMovie.setPackageIncluded(false);
 
-        timecalculator  calculator = new timecalculator();
+        Timecalculator calculator = new Timecalculator();
         calculator.incluide(myMovie);
         calculator.incluide(newMovie);
         calculator.incluide(supernatural);
-        System.out.println("\nOs filmes tem: " +calculator.getTimeTotal() + " Minutos");
+        System.out.println("\nOs titulos tem: " +calculator.getTimeTotal() + " Minutos");
+
+        RecommendationsFilter filter  = new RecommendationsFilter();
+        filter.filter(myMovie);
+
+        Episode episodios = new Episode();
+        episodios.setEpNumber(1);
+        episodios.setSerie(supernatural);
+        episodios.setTotalViews(300);
+
+        filter.filter(episodios);
     }
 }
