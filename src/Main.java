@@ -5,6 +5,8 @@ import br.com.alura.screenmatch.model.Movie;
 import br.com.alura.screenmatch.model.Serie;
 import br.com.alura.screenmatch.model.Title;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -58,7 +60,13 @@ public class Main {
         episodios.setEpNumber(1);
         episodios.setSerie(supernatural);
         episodios.setTotalViews(300);
-
         filter.filter(episodios);
+
+        ArrayList<Movie> moviesList = new ArrayList<>();
+
+        moviesList.add(newMovie);
+        moviesList.add(myMovie);
+        System.out.println("Tamanho da lista " + moviesList.size());
+        System.out.println("Primeiro filme " + moviesList.get(0).getNameTitle());
     }
 }
