@@ -68,5 +68,6 @@ public class Main {
         moviesList.add(myMovie);
         System.out.println("Tamanho da lista " + moviesList.size());
         System.out.println("Primeiro filme " + moviesList.get(0).getNameTitle());
+        System.out.println(moviesList);
     }
 }
