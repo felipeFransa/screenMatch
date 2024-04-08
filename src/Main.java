@@ -10,8 +10,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Movie myMovie = new Movie("Harry Potter");
-        myMovie.setAgeTitle(2014);
+        Movie myMovie = new Movie("Harry Potter", 2014);
         myMovie.setTitleDuration(180);
         myMovie.setPackageIncluded(true);
 
@@ -23,8 +22,7 @@ public class Main {
         System.out.println("Ano de lancamento: " +myMovie.getAgeTitle());
         System.out.println("Tempo de duracao: " +myMovie.getTitleDuration() + "\n");
 
-        Serie supernatural  = new Serie("Supernatural");
-        supernatural.setAgeTitle(2003);
+        Serie supernatural  = new Serie("Supernatural", 2003);
         supernatural.setTemples(15);
         supernatural.setEpisodes(23);
         supernatural.setMinutesEpisode(50);
@@ -34,8 +32,7 @@ public class Main {
         System.out.println("Total de temporadas: " +supernatural.getTemples());
         System.out.println("Tempo de duracao: " +supernatural.getTitleDuration());
 
-        Movie newMovie = new Movie("Senhor dos Aneis");
-        newMovie.setAgeTitle(2002);
+        Movie newMovie = new Movie("Senhor dos Aneis", 2002);
         newMovie.setTitleDuration(160);
         newMovie.setPackageIncluded(false);
 
@@ -48,7 +45,8 @@ public class Main {
         RecommendationsFilter filter  = new RecommendationsFilter();
         filter.filter(myMovie);
 
-        var movieDC = new Movie("Batman");
+        var movieDC = new Movie("Batman", 2008);
+        movieDC.setTitleDuration(180);
 
         Episode episodios = new Episode();
         episodios.setEpNumber(1);

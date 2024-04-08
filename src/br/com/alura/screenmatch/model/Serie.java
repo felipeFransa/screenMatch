@@ -6,10 +6,9 @@ public class Serie extends Title {
     private boolean active;
     private int minutesEpisode;
 
-    public Serie(String nameTitle) {
-        this.setNameTitle(nameTitle);
+    public Serie(String nameTitle, int ageTitle) {
+        super(nameTitle, ageTitle);
     }
-
     public int getEpisodes() {
         return episodes;
     }

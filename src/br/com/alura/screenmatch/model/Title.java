@@ -8,6 +8,11 @@ public class Title {
     private int totalAssessment;
     private int titleDuration;
 
+    public Title(String nameTitle, int ageTitle) {
+        this.nameTitle = nameTitle;
+        this.ageTitle = ageTitle;
+    }
+
     public int getTotalAssessment(){
         return totalAssessment;
     }
