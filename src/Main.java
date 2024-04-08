@@ -11,8 +11,6 @@ public class Main {
     public static void main(String[] args) {
 
         Movie myMovie = new Movie("Harry Potter");
-
-        myMovie.setNameTitle("Harry Potter");
         myMovie.setAgeTitle(2014);
         myMovie.setTitleDuration(180);
         myMovie.setPackageIncluded(true);
@@ -24,12 +22,8 @@ public class Main {
         System.out.println("\nNome do titulo: " +myMovie.getNameTitle());
         System.out.println("Ano de lancamento: " +myMovie.getAgeTitle());
         System.out.println("Tempo de duracao: " +myMovie.getTitleDuration() + "\n");
-//        System.out.println(myMovie.getTotalAssessment());
-//        System.out.println(myMovie.getMedia());
 
-        Serie supernatural  = new Serie();
-
-        supernatural.setNameTitle("Supernatural");
+        Serie supernatural  = new Serie("Supernatural");
         supernatural.setAgeTitle(2003);
         supernatural.setTemples(15);
         supernatural.setEpisodes(23);
@@ -41,8 +35,6 @@ public class Main {
         System.out.println("Tempo de duracao: " +supernatural.getTitleDuration());
 
         Movie newMovie = new Movie("Senhor dos Aneis");
-
-        newMovie.setNameTitle("Senhor dos Aneis");
         newMovie.setAgeTitle(2002);
         newMovie.setTitleDuration(160);
         newMovie.setPackageIncluded(false);
