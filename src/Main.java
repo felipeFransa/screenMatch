@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Movie myMovie = new Movie();
+        Movie myMovie = new Movie("Harry Potter");
 
         myMovie.setNameTitle("Harry Potter");
         myMovie.setAgeTitle(2014);
@@ -40,7 +40,7 @@ public class Main {
         System.out.println("Total de temporadas: " +supernatural.getTemples());
         System.out.println("Tempo de duracao: " +supernatural.getTitleDuration());
 
-        Movie newMovie = new Movie();
+        Movie newMovie = new Movie("Senhor dos Aneis");
 
         newMovie.setNameTitle("Senhor dos Aneis");
         newMovie.setAgeTitle(2002);
@@ -55,6 +55,8 @@ public class Main {
 
         RecommendationsFilter filter  = new RecommendationsFilter();
         filter.filter(myMovie);
+
+        var movieDC = new Movie("Batman");
 
         Episode episodios = new Episode();
         episodios.setEpNumber(1);

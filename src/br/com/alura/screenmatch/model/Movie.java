@@ -4,6 +4,11 @@ import br.com.alura.screenmatch.businesslogic.Classification;
 
 public class Movie extends Title implements Classification {
     private String director;
+
+    public Movie(String nameTitle) {
+        this.setNameTitle(nameTitle);
+    }
+
     public String getDirector() {
         return director;
     }
