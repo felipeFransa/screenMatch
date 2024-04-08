@@ -1,22 +1,32 @@
+package br.com.alura.screenmatch.main;
 import br.com.alura.screenmatch.businesslogic.RecommendationsFilter;
 import br.com.alura.screenmatch.businesslogic.Timecalculator;
 import br.com.alura.screenmatch.model.Episode;
 import br.com.alura.screenmatch.model.Movie;
 import br.com.alura.screenmatch.model.Serie;
-import br.com.alura.screenmatch.model.Title;
-
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        Scanner moviesNotes = new Scanner(System.in);
 
         Movie myMovie = new Movie("Harry Potter", 2014);
         myMovie.setTitleDuration(180);
         myMovie.setPackageIncluded(true);
 
-        myMovie.toAssess(8);
-        myMovie.toAssess(5);
-        myMovie.toAssess(3);
+        System.out.println();
+        int note1 = moviesNotes.nextInt();
+        myMovie.toAssess(note1);
+        System.out.println();
+        int note2 = moviesNotes.nextInt();
+        myMovie.toAssess(note2);
+        System.out.println();
+        int note3 = moviesNotes.nextInt();
+        myMovie.toAssess(note3);
+
+        System.out.println("Media: " +myMovie.getMedia());
 
         System.out.println("\nNome do titulo: " +myMovie.getNameTitle());
         System.out.println("Ano de lancamento: " +myMovie.getAgeTitle());
@@ -58,8 +68,9 @@ public class Main {
 
         moviesList.add(newMovie);
         moviesList.add(myMovie);
-        System.out.println("Tamanho da lista " + moviesList.size());
-        System.out.println("Primeiro filme " + moviesList.get(0).getNameTitle());
+        moviesList.add(movieDC);
+        System.out.println("\nExiste " + moviesList.size());
+        System.out.println("\nPrimeiro filme " + moviesList.get(0).getNameTitle());
         System.out.println(moviesList);
     }
 }
