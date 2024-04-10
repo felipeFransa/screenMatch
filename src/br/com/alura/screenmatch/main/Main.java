@@ -11,18 +11,21 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner moviesNotes = new Scanner(System.in);
+        Scanner nameTitles = new Scanner(System.in);
 
-        Movie myMovie = new Movie("Harry Potter", 2014);
+        System.out.println("Nome do filme:");
+        String nameMovie = nameTitles.nextLine();
+        Movie myMovie = new Movie(nameMovie, 2014);
         myMovie.setTitleDuration(180);
         myMovie.setPackageIncluded(true);
 
-        System.out.println();
+        System.out.println("Digite a nota:");
         int note1 = moviesNotes.nextInt();
         myMovie.toAssess(note1);
-        System.out.println();
+        System.out.println("Digite a nota:");
         int note2 = moviesNotes.nextInt();
         myMovie.toAssess(note2);
-        System.out.println();
+        System.out.println("Digite a nota:");
         int note3 = moviesNotes.nextInt();
         myMovie.toAssess(note3);
 
