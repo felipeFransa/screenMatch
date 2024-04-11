@@ -4,6 +4,7 @@ import br.com.alura.screenmatch.businesslogic.Timecalculator;
 import br.com.alura.screenmatch.model.Episode;
 import br.com.alura.screenmatch.model.Movie;
 import br.com.alura.screenmatch.model.Serie;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
