@@ -10,11 +10,14 @@ import java.util.Scanner;
 public class ListMain {
     public static void main(String[] args) {
         Scanner nameTitles = new Scanner(System.in);
+        Scanner noteMovies = new Scanner(System.in);
 
         System.out.println("Nome do filme:");
         String nameMovie = nameTitles.nextLine();
         Movie myMovie = new Movie(nameMovie, 2014);
-        myMovie.toAssess(5);
+        System.out.println("enter your note:");
+        int note = noteMovies.nextInt();
+        myMovie.toAssess(note);
 
         Serie supernatural  = new Serie("Supernatural", 2003);
 
@@ -22,7 +25,7 @@ public class ListMain {
         newMovie.toAssess(8);
 
         var movieDC = new Movie("Batman", 2008);
-        movieDC.toAssess(10);
+        movieDC.toAssess(8);
 
         ArrayList<Title> listWatched = new ArrayList<>();
 
@@ -37,5 +40,6 @@ public class ListMain {
                 System.out.println("Classification: " + movie.getClassification());
             }
         }
+
     }
 }
