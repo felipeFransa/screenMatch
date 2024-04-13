@@ -4,10 +4,7 @@ import br.com.alura.screenmatch.model.Movie;
 import br.com.alura.screenmatch.model.Serie;
 import br.com.alura.screenmatch.model.Title;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 public class ListMain {
     public static void main(String[] args) {
@@ -51,5 +48,9 @@ public class ListMain {
 
         Collections.sort(listWatched);
         System.out.println("\nList movie order: \n" +listWatched);
+
+        listWatched.sort(Comparator.comparing(Title::getAgeTitle));
+
+        System.out.println("\nAge: \n" + listWatched);
     }
 }

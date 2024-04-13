@@ -45,4 +45,9 @@ public class Serie extends Title {
     public int getTitleDuration() {
         return temples * episodes * minutesEpisode;
     }
+
+    @Override
+    public String toString() {
+        return "Serie: " + this.getNameTitle() + " age: " +this.getAgeTitle() + "\n";
+    }
 }
