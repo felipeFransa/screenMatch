@@ -23,7 +23,7 @@ public class ListMain {
         var movieDisney = new Movie("Avatar", 2022);
         movieDisney.toAssess(10);
 
-        ArrayList<Title> listWatched = new ArrayList<>();
+        List<Title> listWatched = new LinkedList<>();
 
         listWatched.add(newMovie);
         listWatched.add(myMovie);
