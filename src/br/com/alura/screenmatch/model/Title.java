@@ -18,6 +18,12 @@ public class Title implements Comparable<Title> {
         this.ageTitle = ageTitle;
     }
 
+    public Title(HttpReceived myTitleHTTP) {
+        this.nameTitle = myTitleHTTP.title();
+        this.ageTitle = Integer.valueOf(myTitleHTTP.year());
+        this.titleDuration = Integer.valueOf(myTitleHTTP.runtime().substring(0, 2));
+    }
+
     public int getTotalAssessment(){
         return totalAssessment;
     }
@@ -72,8 +78,9 @@ public class Title implements Comparable<Title> {
     @Override
     public String toString() {
         return "Title{" +
-                "nameTitle=' " + nameTitle + '\'' +
-                ", ageTitle= " + ageTitle +
+                "nameTitle='" + nameTitle + '\'' +
+                ", ageTitle=" + ageTitle +
+                ", titleDuration=" + titleDuration +
                 '}';
     }
 }

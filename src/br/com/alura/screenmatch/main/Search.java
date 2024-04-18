@@ -1,7 +1,10 @@
 package br.com.alura.screenmatch.main;
 
+import br.com.alura.screenmatch.model.HttpReceived;
 import br.com.alura.screenmatch.model.Title;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.net.URI;
@@ -29,10 +32,10 @@ public class Search {
         String json = response.body();
         System.out.println(json);
 
-        Gson gson = new Gson();
-        Title myTitle = gson.fromJson(json, Title.class);
+        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+        HttpReceived myTitleHTTP = gson.fromJson(json, HttpReceived.class);
+        Title myTitle = new Title(myTitleHTTP);
+
         System.out.println(myTitle);
-
-
     }
 }
