@@ -5,7 +5,6 @@ import br.com.alura.screenmatch.model.Title;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -20,29 +19,33 @@ public class Search {
         System.out.println("Search movie:");
         String movie = searchMovie.nextLine();
 
-        String addressHTTP = "https://www.omdbapi.com/?t="+movie+"&apikey=3f9c31bf";
-
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(addressHTTP))
-                .build();
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
-
-        String json = response.body();
-        System.out.println(json);
-
-        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
-        HttpReceived myTitleHTTP = gson.fromJson(json, HttpReceived.class);
+        String addressHTTP = "https://www.omdbapi.com/?t="+movie.replace(" ", "+")+"&apikey=3f9c31bf";
 
         try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(addressHTTP))
+                    .build();
+            HttpResponse<String> response = client
+                    .send(request, HttpResponse.BodyHandlers.ofString());
+
+            String json = response.body();
+            System.out.println(json);
+
+            Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+            HttpReceived myTitleHTTP = gson.fromJson(json, HttpReceived.class);
+
             Title myTitle = new Title(myTitleHTTP);
-            System.out.println(myTitle);
+            System.out.println(myTitle.getNameTitle());
         } catch (NumberFormatException error){
             System.out.println("Error");
             System.out.println(error.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("argument error in search");
+            System.out.println(e.getMessage());
         }
-
-        System.out.println("finish programming");
+        finally {
+            System.out.println("finish programming");
+        }
     }
 }
