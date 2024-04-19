@@ -34,8 +34,15 @@ public class Search {
 
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
         HttpReceived myTitleHTTP = gson.fromJson(json, HttpReceived.class);
-        Title myTitle = new Title(myTitleHTTP);
 
-        System.out.println(myTitle);
+        try {
+            Title myTitle = new Title(myTitleHTTP);
+            System.out.println(myTitle);
+        } catch (NumberFormatException error){
+            System.out.println("Error");
+            System.out.println(error.getMessage());
+        }
+
+        System.out.println("finish programming");
     }
 }
