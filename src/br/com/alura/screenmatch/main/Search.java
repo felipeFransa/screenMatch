@@ -1,5 +1,6 @@
 package br.com.alura.screenmatch.main;
 
+import br.com.alura.screenmatch.exception.ConversionErrorException;
 import br.com.alura.screenmatch.model.HttpReceived;
 import br.com.alura.screenmatch.model.Title;
 import com.google.gson.FieldNamingPolicy;
@@ -18,7 +19,6 @@ public class Search {
         Scanner searchMovie = new Scanner(System.in);
         System.out.println("Search movie:");
         String movie = searchMovie.nextLine();
-
         String addressHTTP = "https://www.omdbapi.com/?t="+movie.replace(" ", "+")+"&apikey=3f9c31bf";
 
         try {
@@ -43,6 +43,8 @@ public class Search {
         } catch (IllegalArgumentException e) {
             System.out.println("argument error in search");
             System.out.println(e.getMessage());
+        }catch (ConversionErrorException e){
+            System.out.println(e.getMsg());
         }
         finally {
             System.out.println("finish programming");

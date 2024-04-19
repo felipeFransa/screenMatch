@@ -1,12 +1,10 @@
 package br.com.alura.screenmatch.model;
 
-import com.google.gson.annotations.SerializedName;
+import br.com.alura.screenmatch.exception.ConversionErrorException;
 
 public class Title implements Comparable<Title> {
 
-    @SerializedName("Title")
     private String nameTitle;
-    @SerializedName("Year")
     private int ageTitle;
     private boolean packageIncluded;
     private int assessment;
@@ -20,6 +18,10 @@ public class Title implements Comparable<Title> {
 
     public Title(HttpReceived myTitleHTTP) {
         this.nameTitle = myTitleHTTP.title();
+
+        if (myTitleHTTP.year().length() > 4){
+            throw new ConversionErrorException("Error:");
+        }
         this.ageTitle = Integer.valueOf(myTitleHTTP.year());
         this.titleDuration = Integer.valueOf(myTitleHTTP.runtime().substring(0, 2));
     }
