@@ -5,7 +5,11 @@ public class ConversionErrorException extends RuntimeException {
     public ConversionErrorException(String msg) {
         this.msg = msg;
     }
-    public String getMsg(){
-        return this.msg;
+    @Override
+    public String getMessage() {
+        return this.getMessage();
     }
+    //    public String getMsg(){
+//        return this.msg;
+//    }
 }
